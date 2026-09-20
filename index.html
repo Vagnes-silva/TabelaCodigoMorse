@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Código Morse - Tabela para Impressão</title>
+<style>
+  @page {
+    size: A4 landscape;
+    margin: 1cm;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #1a1a1a;
+    margin: 0;
+    padding: 20px;
+    background: #f5f5f5;
+  }
+
+  .folha {
+    background: #fff;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 35px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 26px;
+    margin: 0 0 4px 0;
+    letter-spacing: 2px;
+    color: #111;
+  }
+
+  .subtitulo {
+    text-align: center;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 18px;
+    font-style: italic;
+  }
+
+  h2 {
+    font-size: 15px;
+    margin: 18px 0 8px 0;
+    padding: 5px 10px;
+    background: #222;
+    color: #fff;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
+  }
+
+  th, td {
+    border: 1px solid #bbb;
+    padding: 5px 6px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  th {
+    background: #e8e8e8;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+
+  td.letra {
+    font-weight: bold;
+    font-size: 14px;
+    background: #fafafa;
+    width: 12%;
+  }
+
+  td.codigo {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #0a4d8c;
+    font-weight: bold;
+  }
+
+  .duas-colunas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+
+  .regras {
+    background: #fffbe6;
+    border: 2px solid #f0c419;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-top: 10px;
+  }
+
+  .regras h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: #8a6d00;
+  }
+
+  .regras table td {
+    border: none;
+    text-align: left;
+    padding: 3px 8px;
+    font-size: 12px;
+  }
+
+  .regras table td:first-child {
+    font-weight: bold;
+    width: 45%;
+  }
+
+  .sos {
+    text-align: center;
+    background: #ffe6e6;
+    border: 2px dashed #d33;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .sos .codigo-sos {
+    font-family: 'Courier New', monospace;
+    font-size: 22px;
+    letter-spacing: 6px;
+    font-weight: bold;
+    color: #b00;
+  }
+
+  .sos .legenda {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  .palavras td {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .palavras td:first-child {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+    background: #fafafa;
+    letter-spacing: 0;
+    font-size: 12px;
+  }
+
+  .rodape {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 15px;
+    border-top: 1px solid #ddd;
+    padding-top: 8px;
+  }
+
+  /* ====== IMPRESSÃO ====== */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0;
+    }
+    .folha {
+      box-shadow: none;
+      padding: 0;
+      max-width: 100%;
+    }
+    h1 { font-size: 22px; }
+    h2 { font-size: 13px; }
+    td.codigo { font-size: 13px; }
+    .rodape { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="folha">
+
+  <h1>📻 CÓDIGO MORSE</h1>
+  <div class="subtitulo">Tabela de referência — Robótica com Arduino</div>
+
+  <!-- LETRAS -->
+  <h2>🔤 LETRAS (A – Z)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Letra</th><th>Código</th>
+        <th>Letra</th><th>Código</th>
+        <th>Letra</th><th>Código</th>
+        <th>Letra</th><th>Código</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="letra">A</td><td class="codigo">.-</td>
+        <td class="letra">H</td><td class="codigo">....</td>
+        <td class="letra">O</td><td class="codigo">---</td>
+        <td class="letra">V</td><td class="codigo">...-</td>
+      </tr>
+      <tr>
+        <td class="letra">B</td><td class="codigo">-...</td>
+        <td class="letra">I</td><td class="codigo">..</td>
+        <td class="letra">P</td><td class="codigo">.--.</td>
+        <td class="letra">W</td><td class="codigo">.--</td>
+      </tr>
+      <tr>
+        <td class="letra">C</td><td class="codigo">-.-.</td>
+        <td class="letra">J</td><td class="codigo">.---</td>
+        <td class="letra">Q</td><td class="codigo">--.-</td>
+        <td class="letra">X</td><td class="codigo">-..-</td>
+      </tr>
+      <tr>
+        <td class="letra">D</td><td class="codigo">-..</td>
+        <td class="letra">K</td><td class="codigo">-.-</td>
+        <td class="letra">R</td><td class="codigo">.-.</td>
+        <td class="letra">Y</td><td class="codigo">-.--</td>
+      </tr>
+      <tr>
+        <td class="letra">E</td><td class="codigo">.</td>
+        <td class="letra">L</td><td class="codigo">.-..</td>
+        <td class="letra">S</td><td class="codigo">...</td>
+        <td class="letra">Z</td><td class="codigo">--..</td>
+      </tr>
+      <tr>
+        <td class="letra">F</td><td class="codigo">..-.</td>
+        <td class="letra">M</td><td class="codigo">--</td>
+        <td class="letra">T</td><td class="codigo">-</td>
+        <td class="letra">—</td><td class="codigo">—</td>
+      </tr>
+      <tr>
+        <td class="letra">G</td><td class="codigo">--.</td>
+        <td class="letra">N</td><td class="codigo">-.</td>
+        <td class="letra">U</td><td class="codigo">..-</td>
+        <td class="letra">—</td><td class="codigo">—</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="duas-colunas">
+
+    <!-- NÚMEROS -->
+    <div>
+      <h2>🔢 NÚMEROS (0 – 9)</h2>
+      <table>
+        <thead>
+          <tr><th>Núm.</th><th>Código</th><th>Núm.</th><th>Código</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="letra">0</td><td class="codigo">-----</td><td class="letra">5</td><td class="codigo">.....</td></tr>
+          <tr><td class="letra">1</td><td class="codigo">.----</td><td class="letra">6</td><td class="codigo">-....</td></tr>
+          <tr><td class="letra">2</td><td class="codigo">..---</td><td class="letra">7</td><td class="codigo">--...</td></tr>
+          <tr><td class="letra">3</td><td class="codigo">...--</td><td class="letra">8</td><td class="codigo">---..</td></tr>
+          <tr><td class="letra">4</td><td class="codigo">....-</td><td class="letra">9</td><td class="codigo">----.</td></tr>
+        </tbody>
+      </table>
+
+      <!-- SINAIS -->
+      <h2>⚠️ SINAIS E PONTUAÇÃO</h2>
+      <table>
+        <thead>
+          <tr><th>Sig.</th><th>Código</th><th>Sig.</th><th>Código</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="letra">.</td><td class="codigo">.-.-.-</td><td class="letra">?</td><td class="codigo">..--..</td></tr>
+          <tr><td class="letra">,</td><td class="codigo">--..--</td><td class="letra">!</td><td class="codigo">-.-.--</td></tr>
+          <tr><td class="letra">/</td><td class="codigo">-..-.</td><td class="letra">@</td><td class="codigo">.--.-.</td></tr>
+          <tr><td class="letra">-</td><td class="codigo">-....-</td><td class="letra">=</td><td class="codigo">-...-</td></tr>
+          <tr><td class="letra">(</td><td class="codigo">-.--.</td><td class="letra">)</td><td class="codigo">-.--.-</td></tr>
+          <tr><td class="letra">:</td><td class="codigo">---...</td><td class="letra">'</td><td class="codigo">.----.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- REGRAS + SOS + PALAVRAS -->
+    <div>
+      <div class="regras">
+        <h3>📏 REGRAS DE TEMPO (1 unidade = 200 ms)</h3>
+        <table>
+          <tr><td>Ponto (·)</td><td>1 unidade</td></tr>
+          <tr><td>Traço (–)</td><td>3 unidades</td></tr>
+          <tr><td>Espaço entre símbolos</td><td>1 unidade</td></tr>
+          <tr><td>Espaço entre letras</td><td>3 unidades</td></tr>
+          <tr><td>Espaço entre palavras</td><td>7 unidades</td></tr>
+        </table>
+      </div>
+
+      <div class="sos">
+        <div class="codigo-sos">... --- ...</div>
+        <div class="legenda">SOS — pedido de socorro internacional</div>
+      </div>
+
+      <h2>🎯 PALAVRAS PARA PRATICAR</h2>
+      <table class="palavras">
+        <thead>
+          <tr><th>Palavra</th><th>Morse</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>ROBO</td><td>.-. --- -... ---</td></tr>
+          <tr><td>LUZ</td><td>.-.. ..- --..</td></tr>
+          <tr><td>SOS</td><td>... --- ...</td></tr>
+          <tr><td>ARDUINO</td><td>.- .-. -.. ..- .. -. ---</td></tr>
+          <tr><td>PIZZA</td><td>.--. .. --.. --.. .-</td></tr>
+          <tr><td>HELLO</td><td>.... . .-.. .-.. ---</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="rodape">
+    Tabela Morse — Robótica com Arduino Uno · Imprimir em A4 paisagem
+  </div>
+
+</div>
+
+</body>
+</html>
